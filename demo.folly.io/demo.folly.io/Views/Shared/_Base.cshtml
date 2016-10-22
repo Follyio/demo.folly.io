@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        var currentDemoID = @ViewBag.SiteID;
+        var savedDemoID = localStorage.getItem("follyDemoID");
+
+        if(savedDemoID == null && currentDemoID == 0)
+        {
+            window.location = "/" + Math.floor(Math.random() * 1000000) + window.location.pathname;
+        }
+        else if(currentDemoID == 0)
+        {
+            window.location = "/" + savedDemoID + window.location.pathname;
+        }
+        else
+        {
+            localStorage.setItem("follyDemoID", currentDemoID);
+        }
+    </script>
+    <script src="https://plugins.folly.io/release/alpha/folly.js" folly-sitekey="66336fce2798f7b818309d76e0524b47" folly-paths="/@ViewBag.SiteID"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Folly Demo #@ViewBag.SiteID</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/content/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/content/css/heroic-features.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .jumbotron {
+            color: white;
+            text-shadow:
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(function(){
+            $(window).click(function(e){
+                var elem = $(e.toElement);
+
+                if(!elem.is("#follySettings"))
+                {
+                    var p = elem.parents("#follySettings");
+
+                    if (p.length > 0)
+                        elem = $(p[0]);
+                    else
+                        return;
+                }
+
+                $("#follyEmail").val("demo@folly.io");
+                $("#follyPassword").val("follydemo");
+            })
+        });
+    </script>
+    <!-- Start Alexa Certify Javascript -->
+    <script type="text/javascript">
+        _atrk_opts = { atrk_acct:"4bxin1a4KM10WR", domain:"folly.io",dynamic: true};
+        (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    </script>
+    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=4bxin1a4KM10WR" style="display:none" height="1" width="1" alt="" /></noscript>
+    <!-- End Alexa Certify Javascript -->
+</body>
+</html>

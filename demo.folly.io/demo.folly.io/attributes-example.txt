@@ -1,0 +1,18 @@
+﻿<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img folly-img="/gallery/1/image" src="http://bit.ly/2dH72YI" alt="Awesome Nebula" />
+      <div class="caption">
+        <h3 folly-text="/gallery/1/label">Thumbnail label</h3>
+        <p folly-html="/gallery/1/description">
+			Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi 
+			porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+		</p>
+        <p>
+			<a folly-text="/gallery/button-1-label" href="#" class="btn btn-primary" role="button">Button 1</a> 
+			<a folly-text="/gallery/button-1-label" href="#" class="btn btn-default" role="button">Button 2</a>
+		</p>
+      </div>
+    </div>
+  </div>
+</div>

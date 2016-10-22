@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+    //int productCount = 4;
+}
+
+<!-- Jumbotron Header -->
+<header class="jumbotron hero-spacer" folly-bgimg="header-img" folly-img-params="w=1140&h=320" style="background-image: url(https://placeholdit.imgix.net/~text?txtsize=80&txt=&w=1140&h=320&txttrack=0); background-size: cover;">
+    <h1 folly-text="title">Folly Demo!</h1>
+    <p folly-text="tagline">Start by logging in by clicking the <a href="#"><i class="fa fa-bars"></i></a> icon on the bottom-left of your screen to log in.</p>
+    @*<p folly-html="call-to-action2">
+            <a href="#" class="btn btn-primary btn-large">Call to action!</a>
+        </p>*@
+</header>
+<hr>
+<!-- Title -->
+<div class="row">
+    <div class="col-lg-12">
+        <h3 folly-text="thumbnail-list-title">Latest Features</h3>
+    </div>
+</div>
+<!-- /.row -->
+<!-- Page Features -->
+<div class="row text-center">
+    @{
+        var i = 1;
+    }
+    @*@for (var i = 1; i <= productCount; i++)
+        {*@
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img folly-img="product/@i/img" src="http://placehold.it/800x500?w=255&h=170" alt="">
+            <div class="caption">
+                <h3 folly-text="product/@i/name">Right-click to edit text</h3>
+                <p folly-html="product/@i/short-description">Right-click any text on the page to edit it.</p>
+                <p>
+                    <a href="/@ViewBag.SiteID/product/@i" class="btn btn-default" folly-text="more-info-button">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    @*}*@
+
+    @{
+        i++;
+    }
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img folly-img="product/@i/img" src="http://placehold.it/800x500?w=255&h=170" alt="">
+            <div class="caption">
+                <h3 folly-text="product/@i/name">Double-click images</h3>
+                <p folly-html="product/@i/short-description">Double-click any image to edit it.</p>
+                <p>
+                    <a href="/@ViewBag.SiteID/product/@i" class="btn btn-default" folly-text="more-info-button">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    @{
+        i++;
+    }
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img folly-img="product/@i/img" src="http://placehold.it/800x500?w=255&h=170" alt="">
+            <div class="caption">
+                <h3 folly-text="product/@i/name">Drag/Drop images</h3>
+                <p folly-html="product/@i/short-description">Drag &amp; Drop images from your desktop for easy uploading</p>
+                <p>
+                    <a href="/@ViewBag.SiteID/product/@i" class="btn btn-default" folly-text="more-info-button">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    @{
+        i++;
+    }
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+            <img folly-img="product/@i/img" src="http://placehold.it/800x500?w=255&h=170" alt="">
+            <div class="caption">
+                <h3 folly-text="product/@i/name">Hold ESC to highlight editable</h3>
+                <p folly-html="product/@i/short-description">Hold the ESC key to view all editable fields on the page.</p>
+                <p>
+                    <a href="/@ViewBag.SiteID/product/@i" class="btn btn-default" folly-text="more-info-button">More Info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
