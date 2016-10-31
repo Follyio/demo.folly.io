@@ -73,8 +73,25 @@
                         return;
                 }
 
-                $("#follyEmail").val("demo@folly.io");
-                $("#follyPassword").val("follydemo");
+                console.log("setting login info");
+
+                var setCreds = function()
+                {
+                    if($("#follyEmail").length == 0)
+                    {
+                        setTimeout(setCreds, 100);
+                        return;
+                    }
+
+                    $("#follyEmail").val("demo@folly.io");
+                    $("#follyPassword").val("follydemo");
+                };
+
+                setCreds();
+
+
+
+                
             })
         });
     </script>
